@@ -166,3 +166,7 @@ label{
 #navbarCollapse{
     text-align: right;
 }
+
+#landingImage {
+    opacity: 0.5;
+}

@@ -20,7 +20,7 @@ var commentRoutes       = require("./routes/comments"),
 
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_12";
 mongoose.connect(url);
-// mongoose.connect("mongodb://<USER>:<PASSWORD>@ds125288.mlab.com:25288/nissacjg-yelpcampv12");
+// mongoose.connect("mongodb://<USER>:<PASSWORD>@ds125288.mlab.com:25288/nissacjg-yelpcampv13");
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));

@@ -14,7 +14,7 @@ router.get("/register", function(req,res){
         req.flash("error", "You are already logged in, please log out first");
         return res.redirect("back");
     }
-    res.render("register");
+    res.render("register", {page: "register"});
 });
 
 // Handling user sign up
@@ -25,7 +25,7 @@ router.post("/register", function(req, res){
           return res.redirect("register");
       } 
       passport.authenticate("local")(req, res, function(){
-          req.flash("success", "Welcome to YelpCamp " + user.username);
+          req.flash("success", "Successfully Signed Up! Welcome to YelpCamp " + user.username);
           res.redirect("/campgrounds");
       });
     });
@@ -33,12 +33,13 @@ router.post("/register", function(req, res){
 
 // Show Login Page  
 router.get("/login", function(req, res) {
-    res.render("login");
+    res.render("login", {page: "login"});
 });
 
 // Handling user login
 // including middleware (passport.authenticate)
 router.post("/login", passport.authenticate("local", {
+    successFlash: "Welcome back!",
     successRedirect: "/campgrounds",
     failureFlash: "Username or Password is incorrect",
     failureRedirect: "/login"
@@ -48,8 +49,8 @@ router.post("/login", passport.authenticate("local", {
 // Handling user logout
 router.get("/logout", function(req, res) {
     req.logout();
-    req.flash("success", "Logged Out")
-    res.redirect("/");
+    req.flash("success", "See you next time!")
+    res.redirect("/campgrounds");
 });
 
 module.exports = router;

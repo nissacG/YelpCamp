@@ -103,13 +103,23 @@ body {
 }
 
 footer {
-  position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
   background-color: #f5f5f5;
+  margin-top: 1rem;
+  text-align: center;
+}
+footer p {
+    margin-bottom: 0;
+    margin-top: inherit;
+}
+footer p a {
+    color: #6C7577;
+}footer p a:hover {
+    color: white;
 }
 
 h2{

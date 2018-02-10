@@ -5,10 +5,17 @@
             <img class="mb-4" src="https://image.ibb.co/ciFi8x/Y_343_A40_wht.png" alt="YelpCamp Logo" width="72" height="72">
             <h2 class="mb-0">Sign Up</h2>
             <form class="form-signin" action="/register" method="POST">
-                <label for="inputUsername" class="sr-only">Username</label>
-                <input class="form-control" type="text" name="username" placeholder="Username">
-                <label for="inputPassword" class="sr-only">Password</label>
-                <input class="form-control" type="password" name="password" placeholder="Password">
+                
+                <div class="form-label-group">
+                <input class="form-control" id="inputUsername" type="text" name="username" placeholder="Username" required>
+                <label for="inputUsername">Username</label>
+                </div>
+                
+                <div class="form-label-group">
+                <input class="form-control" id="inputPassword" type="password" name="password" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+                </div>
+                
                 <button class="btn btn-md btn-block btn-primary indexBtn mt-3">Sign Up</button>
             </form>
             <form class="form-signin pt-0">
